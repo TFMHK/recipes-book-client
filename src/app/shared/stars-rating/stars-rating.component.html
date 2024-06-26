@@ -1,0 +1,10 @@
+<div class="stars-rating">
+    <div class="rating-background">
+      <div class="rating-foreground" [ngStyle]="{ 'width': starWidth + '%' }">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]">&#9733;</span>
+      </div>
+      <div class="rating-background-overlay">
+        <span *ngFor="let star of [1, 2, 3, 4, 5]">&#9733;</span>
+      </div>
+    </div>
+  </div>  

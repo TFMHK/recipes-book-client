@@ -1,0 +1,13 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="permissions-box">
+    <div class="permissions-box-actions">
+        <input type="text" [(ngModel)]="username" placeholder="Enter Username" class="form-control">
+        <p>Choose Permission</p>
+        <div appDropdown>
+            <select [(ngModel)]="selectedPermission" class="form-control">
+                <option *ngFor="let permission of permissions" [value]="permission">{{permission}}</option>
+            </select>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="onGivePermission()">Give Permission</button>
+    </div>
+</div>

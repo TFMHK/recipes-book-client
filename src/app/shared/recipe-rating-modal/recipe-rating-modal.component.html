@@ -1,0 +1,25 @@
+<div class="backdrop" (click)="onClose()"></div>
+<div class="box">
+  <div class="box-actions">
+    <div class="form-group">
+      <label for="ratingInput">Rating:</label>
+      <div class="rate">
+        <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="rating" />
+        <label for="star5" title="5 stars"></label>
+        <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="rating" />
+        <label for="star4" title="4 stars"></label>
+        <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="rating" />
+        <label for="star3" title="3 stars"></label>
+        <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="rating" />
+        <label for="star2" title="2 star"></label>
+        <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="rating" />
+        <label for="star1" title="1 star"></label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="commentInput">Comment:</label>
+      <textarea class="form-control" id="commentInput" [(ngModel)]="comment"></textarea>
+    </div>
+    <button type="button" class="btn btn-success" (click)="onClose()">Submit</button>
+  </div>
+</div>

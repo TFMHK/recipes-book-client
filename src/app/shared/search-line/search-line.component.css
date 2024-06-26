@@ -1,0 +1,32 @@
+.search-container {
+    position: relative;
+    width: 300px; 
+}
+
+.gg-search {
+    box-sizing: border-box;
+    position: absolute;
+    display: block;
+    transform: scale(var(--ggs, 0.8)); 
+    width: 16px; 
+    height: 16px;
+    border: 2px solid;
+    border-radius: 100%;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.gg-search::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 4px;
+    height: 8px; 
+    background: currentColor;
+    transform: rotate(-45deg);
+    top: 10px;
+    left: 12px;
+}

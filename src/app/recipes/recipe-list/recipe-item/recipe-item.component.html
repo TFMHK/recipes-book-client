@@ -1,0 +1,20 @@
+<a 
+    style="cursor: pointer;"
+    [routerLink]="[index]"
+    routerLinkActive='active'
+    class="list-group-item clearfix">
+    <div class="image-container">
+        <img 
+            [src]="recipe.imagePath" 
+            alt="{{ recipe.name }}"
+            class="img-responsive">
+    </div>
+    <div class="details-container">
+        <h4 class="recipe-name">{{ recipe.name }}</h4>
+        <p class="recipe-description">{{ recipe.description }}</p>
+        <div class="rating-container">
+            <app-stars-rating [rating]="recipe.rating"></app-stars-rating>
+            <b>{{ recipe.ratingAmount }} Ratings</b>
+        </div>
+    </div>
+</a>

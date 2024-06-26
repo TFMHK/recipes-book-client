@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-md-5">
+        <img [src]="recipe.imagePath" alt="{{recipe.name}}" class = "img-responsive">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{recipe.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div 
+        class="btn-group"
+        appDropdown>
+            <button type = "button" 
+            class = "btn btn-primary dropdown-taggle">
+            Manage Recipe <span class = "caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a (click)="onAddToShoppingList()" style = "cursor: pointer">To Shopping List</a></li>
+            <li><a (click)="onEdit()" style="cursor: pointer;">Edit Recipe</a></li>
+            <li><a (click)="onDelete()" style="cursor: pointer;">Delete Recipe</a></li>
+        </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{recipe.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class = 'list-group'>
+            <li 
+                class="list-group-item"
+                *ngFor = "let ingredient of recipe.ingredients">
+                {{ingredient.name}} - {{ingredient.amount}}
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        {{recipe.directions}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-primary" (click)="onClick()">Comment & Rate</button>
+        <app-recipe-rating-modal 
+            *ngIf = "commentAndRate" 
+            (close)="commentAndRate = false"
+            (ratingAdded)="onRatingAdded($event)"
+            (commentAdded)="onCommentAdded($event)"
+        ></app-recipe-rating-modal>
+    </div>
+</div>
+<app-alert [message] = "error" *ngIf="error !== ''" (close) = "error = ''"></app-alert>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class = 'list-group'>
+            <li 
+                class="list-group-item"
+                *ngFor = "let comment of recipe.comments">
+                {{comment.username}}
+                <hr>
+                {{comment.comment}}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="search-container">
+    <input 
+        type="text" 
+        placeholder="Search recipes..."
+        [(ngModel)]="searchTerm"
+        class="form-control"
+        (keypress)="onKeyPress($event)">
+    <span class="gg-search" (click)="onSearch()"></span>
+</div>

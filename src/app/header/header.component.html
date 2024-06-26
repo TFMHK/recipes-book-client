@@ -1,0 +1,27 @@
+<nav class = "navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header" routerLinkActive = "active">
+            <a routerLink = "/recipe-book" class = "navbar-brand"> Recipe Book </a>
+        </div>
+
+        <div class="navbar-default">
+            <ul class ="nav navbar-nav" *ngIf="isAuthenticated">
+                <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
+                <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+            </ul>
+            <ul class ="nav navbar-nav navbar-right">
+                <li routerLinkActive="active"><a routerLink="/authorization" *ngIf="!isAuthenticated">Login</a></li>
+                <li routerLinkActive="active"><a routerLink="/authorization" (click) = "onLogout()" *ngIf="isAuthenticated">Logout</a></li>
+                <li class ="dropdown" appDropdown *ngIf="isAuthenticated">
+                    <a style="cursor: pointer;" class = "dropdown-toggle" role ="button">Manage <span class ="caret"></span></a>
+                    <ul class = "dropdown-menu">
+                        <li><a style="cursor: pointer;" (click) = "onSaveData(true)">Ride Data</a></li>
+                        <li><a style="cursor: pointer;" (click) = "onSaveData(false)">Add Data</a></li>
+                        <li><a style="cursor: pointer;" (click) = "onfetchData(true)">Pull Data</a></li>
+                        <li><a style="cursor: pointer;" (click) = "onfetchData(false)">Fatch Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

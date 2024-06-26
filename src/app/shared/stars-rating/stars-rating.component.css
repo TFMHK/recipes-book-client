@@ -1,0 +1,27 @@
+.stars-rating {
+  display: inline-block;
+}
+
+.rating-background {
+  position: relative;
+  display: inline-block;
+}
+
+.rating-background-overlay {
+  color: lightgray;
+}
+
+.rating-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: orange;
+}
+
+.rating-background span,
+.rating-foreground span {
+  font-size: 24px;
+  cursor: default;
+}
